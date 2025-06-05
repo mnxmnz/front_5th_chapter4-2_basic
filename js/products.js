@@ -28,7 +28,8 @@ async function loadProducts() {
     const container = document.querySelector('#all-products .container');
 
     if (container) {
-      container.innerHTML = '<p class="error">상품을 불러오는데 실패했습니다. 나중에 다시 시도해주세요.</p>';
+      container.innerHTML =
+        '<p class="error" role="alert">상품을 불러오는데 실패했습니다. 나중에 다시 시도해주세요.</p>';
     }
   }
 }
@@ -45,6 +46,7 @@ function displayProducts(products) {
     const productElement = document.createElement('div');
 
     productElement.classList.add('product');
+    productElement.setAttribute('role', 'article');
 
     const pictureDiv = document.createElement('div');
 
@@ -53,7 +55,7 @@ function displayProducts(products) {
     const img = document.createElement('img');
 
     img.src = product.image;
-    img.alt = `product: ${product.title}`;
+    img.alt = `${product.title} - ${product.description.substring(0, 100)}...`;
     img.width = 250;
     img.height = 250;
     img.loading = 'lazy';
@@ -86,6 +88,7 @@ function displayProducts(products) {
     const button = document.createElement('button');
 
     button.textContent = 'Add to bag';
+    button.setAttribute('aria-label', `Add ${product.title} to shopping bag`);
 
     infoDiv.appendChild(category);
     infoDiv.appendChild(title);
