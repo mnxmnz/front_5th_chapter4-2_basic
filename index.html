@@ -107,13 +107,14 @@
     <main>
       <section class="hero" aria-labelledby="hero-heading">
         <picture>
-          <source media="(min-width: 960px)" srcset="images/Hero_Desktop.webp" />
-          <source media="(min-width: 576px)" srcset="images/Hero_Tablet.webp" />
+          <source class="mobile" media="(max-width: 576px)" srcset="images/Hero_Mobile.webp" />
+          <source class="tablet" media="(max-width: 960px)" srcset="images/Hero_Tablet.webp" />
           <img
-            src="images/Hero_Mobile.webp"
+            class="desktop"
+            src="images/Hero_Desktop.webp"
             alt="Immersive VR headset experience showcasing virtual reality technology"
-            width="1440"
-            height="600"
+            width="960"
+            height="560"
             loading="eager"
           />
         </picture>
