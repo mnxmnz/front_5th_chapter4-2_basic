@@ -51,6 +51,7 @@ function displayProducts(products) {
     const img = document.createElement('img');
     img.src = product.image;
     img.alt = `${product.title} - ${product.description.substring(0, 100)}...`;
+    img.width = 250;
     img.loading = 'lazy';
     img.decoding = 'async';
     pictureDiv.appendChild(img);
