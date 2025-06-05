@@ -111,3 +111,25 @@ const productsSection = document.querySelector('#all-products');
 if (productsSection) {
   observer.observe(productsSection);
 }
+
+function processInChunks() {
+  let currentIndex = 0;
+  const chunkSize = 50000;
+
+  function processNextChunk() {
+    const endIndex = Math.min(currentIndex + chunkSize, 10000000);
+
+    while (currentIndex < endIndex) {
+      const temp = Math.sqrt(currentIndex) * Math.sqrt(currentIndex);
+      currentIndex++;
+    }
+
+    if (currentIndex < 10000000) {
+      requestAnimationFrame(processNextChunk);
+    }
+  }
+
+  processNextChunk();
+}
+
+processInChunks();
