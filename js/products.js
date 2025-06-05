@@ -54,6 +54,7 @@ function displayProducts(products) {
     img.width = 250;
     img.loading = 'lazy';
     img.decoding = 'async';
+    img.fetchPriority = 'low';
     pictureDiv.appendChild(img);
 
     const infoDiv = document.createElement('div');
