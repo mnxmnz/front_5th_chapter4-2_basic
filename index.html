@@ -4,6 +4,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Discover our premium collection of VR headsets. Shop the latest virtual reality technology from top brands."
+    />
+    <meta name="keywords" content="VR headsets, virtual reality, gaming, technology" />
+    <meta name="author" content="VR Headsets Shop" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="VR Headsets Shop - Premium Virtual Reality Technology" />
+    <meta
+      property="og:description"
+      content="Discover our premium collection of VR headsets. Shop the latest virtual reality technology from top brands."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://vrheadsets.shop" />
+    <meta property="og:image" content="/images/og-image.jpg" />
     <title>Home - Tech Shop</title>
     <link rel="preload" href="https://fonts.googleapis.com/css?family=Heebo:300,400,600,700&display=swap" as="style" />
     <link rel="preload" href="/css/styles.css" as="style" />
@@ -59,193 +74,221 @@
     ></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <header>
+    <header role="banner">
       <div class="container">
         <section class="logo">
-          <a href="index.html">
+          <a href="index.html" aria-label="VR Headsets Shop Home">
             <strong>VR</strong>
-            <span class="blue-dot"></span>
-            <span class="blue-dot"></span>
+            <span class="blue-dot" aria-hidden="true"></span>
+            <span class="blue-dot" aria-hidden="true"></span>
             <span>Headsets</span>
           </a>
         </section>
-        <nav>
+        <nav role="navigation" aria-label="Main navigation">
           <ul>
             <li><a href="about.html">About us</a></li>
             <li><a href="index.html#best-sellers-section">Best Sellers</a></li>
             <li><a href="index.html#newsletter-section">Newsletter</a></li>
             <li class="menu-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M3 12H21"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M3 6H21"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M3 18H21"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
+              <button aria-label="Open menu" aria-expanded="false">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M3 12H21"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M3 6H21"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M3 18H21"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
             </li>
           </ul>
         </nav>
       </div>
     </header>
 
-    <section class="hero">
-      <picture>
-        <source media="(min-width: 960px)" srcset="images/Hero_Desktop.webp" />
-        <source media="(min-width: 576px)" srcset="images/Hero_Tablet.webp" />
-        <img src="images/Hero_Mobile.webp" alt="VR Headset Hero Image" width="1440" height="600" loading="eager" />
-      </picture>
+    <main>
+      <section class="hero" aria-labelledby="hero-heading">
+        <picture>
+          <source media="(min-width: 960px)" srcset="images/Hero_Desktop.webp" />
+          <source media="(min-width: 576px)" srcset="images/Hero_Tablet.webp" />
+          <img
+            src="images/Hero_Mobile.webp"
+            alt="Immersive VR headset experience showcasing virtual reality technology"
+            width="1440"
+            height="600"
+            loading="eager"
+          />
+        </picture>
 
-      <div class="hero-content">
-        <div class="container">
-          <h1>Discover our line of VR Headsets</h1>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
-          <button>View Headsets</button>
-        </div>
-      </div>
-    </section>
-
-    <section class="country-bar hidden"></section>
-
-    <section class="best-sellers" id="best-sellers-section">
-      <h1>Best Sellers</h1>
-      <hr />
-      <div class="product-slider">
-        <div class="container">
-          <div class="product new">
-            <div class="product-picture">
-              <picture>
-                <source media="(min-width: 960px)" srcset="images/vr1.webp" />
-                <source media="(min-width: 576px)" srcset="images/vr1.webp" />
-                <img src="images/vr1.webp" alt="Apple Headset" width="250" height="250" loading="lazy" />
-              </picture>
-            </div>
-            <div class="product-info">
-              <h5 class="categories">Headsets, Apple</h5>
-              <h4 class="title">Apple Headset</h4>
-              <h3 class="price">
-                <span>US$ 450.00</span>
-              </h3>
-              <button>Add to bag</button>
-            </div>
-          </div>
-
-          <div class="product new">
-            <div class="product-picture">
-              <picture>
-                <source media="(min-width: 960px)" srcset="images/vr2.webp" />
-                <source media="(min-width: 576px)" srcset="images/vr2.webp" />
-                <img src="images/vr2.webp" alt="Playstation Headset" width="250" height="250" loading="lazy" />
-              </picture>
-            </div>
-            <div class="product-info">
-              <h5 class="categories">Headsets, PS</h5>
-              <h4 class="title">Playstation Headset</h4>
-              <h3 class="price">
-                <span>US$ 399.99</span>
-              </h3>
-              <button>Add to bag</button>
-            </div>
-          </div>
-
-          <div class="product">
-            <div class="product-picture">
-              <picture>
-                <source media="(min-width: 960px)" srcset="images/vr3.webp" />
-                <source media="(min-width: 576px)" srcset="images/vr3.webp" />
-                <img src="images/vr3.webp" alt="Oculus Headset" width="250" height="250" loading="lazy" />
-              </picture>
-            </div>
-            <div class="product-info">
-              <h5 class="categories">Headsets, Oculus</h5>
-              <h4 class="title">Oculus Headset</h4>
-              <h3 class="price">
-                <span class="discounted-price">US$ 349.99</span>
-                <span class="original-price">US$ 419.99</span>
-              </h3>
-              <button>Add to bag</button>
-            </div>
+        <div class="hero-content">
+          <div class="container">
+            <h1 id="hero-heading">Discover our line of VR Headsets</h1>
+            <p>
+              Experience the future of virtual reality with our premium collection of VR headsets. Immerse yourself in
+              stunning visuals and seamless performance.
+            </p>
+            <button aria-label="View our VR headset collection">View Headsets</button>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="best-sellers">
-      <h1>All Products</h1>
-      <hr />
-      <div class="product-slider" id="all-products">
-        <div class="container"></div>
-      </div>
-    </section>
+      <section class="country-bar hidden"></section>
 
-    <section class="newsletter" id="newsletter-section">
-      <h3>Newsletter Signup</h3>
-      <p>Subscribe now and don't miss a single deal!</p>
-      <form>
-        <input type="email" name="email" placeholder="Your email..." />
-        <button type="submit">Subscribe</button>
-      </form>
-    </section>
+      <section class="best-sellers" id="best-sellers-section" aria-labelledby="best-sellers-heading">
+        <h1 id="best-sellers-heading">Best Sellers</h1>
+        <hr />
+        <div class="product-slider">
+          <div class="container">
+            <div class="product new">
+              <div class="product-picture">
+                <picture>
+                  <source media="(min-width: 960px)" srcset="images/vr1.webp" />
+                  <source media="(min-width: 576px)" srcset="images/vr1.webp" />
+                  <img
+                    src="images/vr1.webp"
+                    alt="Apple VR Headset - Premium virtual reality headset with advanced features"
+                    width="250"
+                    height="250"
+                    loading="lazy"
+                  />
+                </picture>
+              </div>
+              <div class="product-info">
+                <h5 class="categories">Headsets, Apple</h5>
+                <h4 class="title">Apple Headset</h4>
+                <h3 class="price">
+                  <span>US$ 450.00</span>
+                </h3>
+                <button aria-label="Add Apple VR Headset to shopping bag">Add to bag</button>
+              </div>
+            </div>
 
-    <footer>
+            <div class="product new">
+              <div class="product-picture">
+                <picture>
+                  <source media="(min-width: 960px)" srcset="images/vr2.webp" />
+                  <source media="(min-width: 576px)" srcset="images/vr2.webp" />
+                  <img src="images/vr2.webp" alt="Playstation Headset" width="250" height="250" loading="lazy" />
+                </picture>
+              </div>
+              <div class="product-info">
+                <h5 class="categories">Headsets, PS</h5>
+                <h4 class="title">Playstation Headset</h4>
+                <h3 class="price">
+                  <span>US$ 399.99</span>
+                </h3>
+                <button>Add to bag</button>
+              </div>
+            </div>
+
+            <div class="product">
+              <div class="product-picture">
+                <picture>
+                  <source media="(min-width: 960px)" srcset="images/vr3.webp" />
+                  <source media="(min-width: 576px)" srcset="images/vr3.webp" />
+                  <img src="images/vr3.webp" alt="Oculus Headset" width="250" height="250" loading="lazy" />
+                </picture>
+              </div>
+              <div class="product-info">
+                <h5 class="categories">Headsets, Oculus</h5>
+                <h4 class="title">Oculus Headset</h4>
+                <h3 class="price">
+                  <span class="discounted-price">US$ 349.99</span>
+                  <span class="original-price">US$ 419.99</span>
+                </h3>
+                <button>Add to bag</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="best-sellers">
+        <h1>All Products</h1>
+        <hr />
+        <div class="product-slider" id="all-products">
+          <div class="container"></div>
+        </div>
+      </section>
+
+      <section class="newsletter" id="newsletter-section" aria-labelledby="newsletter-heading">
+        <h3 id="newsletter-heading">Newsletter Signup</h3>
+        <p>Subscribe now and don't miss a single deal!</p>
+        <form aria-label="Newsletter subscription form">
+          <input type="email" name="email" placeholder="Your email..." aria-label="Email address" required />
+          <button type="submit" aria-label="Subscribe to newsletter">Subscribe</button>
+        </form>
+      </section>
+    </main>
+
+    <footer role="contentinfo">
       <div class="bottom-nav">
         <div class="container">
-          <ul>
-            <li class="list-title">Categories</li>
-            <li><a href="#">Watches</a></li>
-            <li><a href="#">Cameras</a></li>
-            <li><a href="#">Phones</a></li>
-            <li><a href="#">Tablets</a></li>
-            <li><a href="#">Computers</a></li>
-          </ul>
+          <nav aria-label="Footer navigation">
+            <ul>
+              <li class="list-title">Categories</li>
+              <li><a href="#">Watches</a></li>
+              <li><a href="#">Cameras</a></li>
+              <li><a href="#">Phones</a></li>
+              <li><a href="#">Tablets</a></li>
+              <li><a href="#">Computers</a></li>
+            </ul>
 
-          <ul>
-            <li class="list-title">About Us</li>
-            <li><a href="#">Our Story</a></li>
-            <li><a href="#">Press</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Awards</a></li>
-            <li><a href="#">Stores</a></li>
-          </ul>
+            <ul>
+              <li class="list-title">About Us</li>
+              <li><a href="#">Our Story</a></li>
+              <li><a href="#">Press</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Awards</a></li>
+              <li><a href="#">Stores</a></li>
+            </ul>
 
-          <ul>
-            <li class="list-title">Social Media</li>
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">Linkedin</a></li>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">Twitter</a></li>
-            <li><a href="#">Youtube</a></li>
-          </ul>
+            <ul>
+              <li class="list-title">Social Media</li>
+              <li><a href="#" aria-label="Follow us on Facebook">Facebook</a></li>
+              <li><a href="#" aria-label="Follow us on LinkedIn">Linkedin</a></li>
+              <li><a href="#" aria-label="Follow us on Instagram">Instagram</a></li>
+              <li><a href="#" aria-label="Follow us on Twitter">Twitter</a></li>
+              <li><a href="#" aria-label="Subscribe to our YouTube channel">Youtube</a></li>
+            </ul>
 
-          <ul>
-            <li class="list-title">Customer Service</li>
-            <li><a href="#">Live Chat</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="#">Terms & Conditions</a></li>
-            <li><a href="#">Delivery & Returns</a></li>
-            <li><a href="#">Finance</a></li>
-          </ul>
+            <ul>
+              <li class="list-title">Customer Service</li>
+              <li><a href="#">Live Chat</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="#">Delivery & Returns</a></li>
+              <li><a href="#">Finance</a></li>
+            </ul>
+          </nav>
         </div>
       </div>
-      <div class="copyright-text">2020 &copy; All Rights Reserved</div>
+      <div class="copyright-text">2024 &copy; All Rights Reserved</div>
     </footer>
 
-    <a href="#" id="open_preferences_center">Update cookies preferences</a>
+    <a href="#" id="open_preferences_center" aria-label="Update cookies preferences">Update cookies preferences</a>
 
     <script type="text/javascript" src="/js/main.js" defer></script>
     <script type="text/javascript" src="/js/products.js" defer></script>
