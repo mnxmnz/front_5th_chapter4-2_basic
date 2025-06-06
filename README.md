@@ -8,43 +8,7 @@ https://front-5th-chapter4-2-basic-nine.vercel.app
 
 ### 2-1. 성능 측정 결과
 
-#### 2-1-1. 개선 전 성능
-
-##### 🎯 Lighthouse 점수
-
-| 카테고리       | 점수 | 상태 |
-| -------------- | ---- | ---- |
-| Performance    | 72%  | 🟠   |
-| Accessibility  | 82%  | 🟠   |
-| Best Practices | 71%  | 🟠   |
-| SEO            | 82%  | 🟠   |
-
-##### 📊 Core Web Vitals (2024)
-
-| 메트릭 | 설명                     | 측정값 | 상태 |
-| ------ | ------------------------ | ------ | ---- |
-| LCP    | Largest Contentful Paint | 13.73s | 🔴   |
-
-#### 2-1-2. 개선 후 성능
-
-##### 🎯 Lighthouse 점수
-
-| 카테고리       | 점수 | 상태 |
-| -------------- | ---- | ---- |
-| Performance    | 94%  | 🟢   |
-| Accessibility  | 95%  | 🟢   |
-| Best Practices | 75%  | 🟠   |
-| SEO            | 100% | 🟢   |
-
-##### 📊 Core Web Vitals (2024)
-
-| 메트릭 | 설명                     | 측정값 | 상태 |
-| ------ | ------------------------ | ------ | ---- |
-| LCP    | Largest Contentful Paint | 2.48s  | 🟢   |
-
-#### 2-1-3. 성능 개선 수치
-
-##### 🎯 Lighthouse 점수 개선
+> [최종 성능 측정 결과 링크](https://github.com/mnxmnz/front_5th_chapter4-2_basic/issues/17)
 
 | 카테고리       | 개선 전 | 개선 후 | 개선률 |
 | -------------- | ------- | ------- | ------ |
@@ -52,25 +16,26 @@ https://front-5th-chapter4-2-basic-nine.vercel.app
 | Accessibility  | 82%     | 95%     | +13%   |
 | Best Practices | 71%     | 75%     | +4%    |
 | SEO            | 82%     | 100%    | +18%   |
+| LCP            | 13.73s  | 2.48s   | +81.9% |
 
-##### 📊 Core Web Vitals 개선
-
-| 메트릭 | 개선 전 | 개선 후 | 개선률 |
-| ------ | ------- | ------- | ------ |
-| LCP    | 13.73s  | 2.48s   | -81.9% |
-
-### 2-2. Core Web Vitals - LCP 개선 사항
+### 2-2. LCP 개선 사항
 
 #### 2-2-1. 이미지 최적화
 
-- 이미지 포맷을 JPG, PNG 에서 AVIF 로 변경하여 압축률 개선
+##### 이미지 포맷 변경
+
+이미지 포맷을 JPG, PNG 에서 AVIF 로 변경하여 압축률을 개선했습니다.
+
+##### fetchPriority 속성 설정
 
 ```js
 const img = document.createElement('img');
 img.fetchPriority = 'low';
 ```
 
-- 제품 이미지의 `fetchPriority` 속성을 `low`로 설정하여 로딩 우선 순위 조정
+제품 이미지의 `fetchPriority` 속성을 `low` 로 설정하여 로딩 우선 순위를 조정했습니다.
+
+##### `picture` 태그 적용
 
 ```html
 <picture>
@@ -87,16 +52,20 @@ img.fetchPriority = 'low';
 </picture>
 ```
 
-- 반응형 이미지 처리를 위한 `picture` 태그 적용
+반응형 이미지 대응을 위해 `picture` 태그를 적용했습니다.
 
 #### 2-2-2. 리소스 로딩 최적화
+
+##### `preload` 속성 적용
 
 ```html
 <link rel="preload" href="https://fonts.googleapis.com/css?family=Heebo:300,400,600,700&display=swap" as="style" />
 <link rel="preload" href="/css/styles.css" as="style" />
 ```
 
-- `preload` 속성 적용
+`preload` 속성을 적용하여 페이지 초기 렌더링 속도를 개선했습니다.
+
+##### 지연 로딩 구현
 
 ```js
 const observer = new IntersectionObserver(
@@ -114,9 +83,11 @@ const observer = new IntersectionObserver(
 );
 ```
 
-- IntersectionObserver 를 통한 지연 로딩 구현
+IntersectionObserver 를 통한 지연 로딩 구현으로 초기 페이지 로딩 시 필요한 리소스만 먼저 가져왔습니다.
 
 #### 2-2-3. 데이터 처리 최적화
+
+##### 캐시 적용
 
 ```js
 let cachedProducts = null;
@@ -154,4 +125,4 @@ async function loadProducts() {
 }
 ```
 
-- 제품 API 호출에 캐시를 적용하여 반복 요청 최소화
+제품 API 호출에 캐시를 적용하여 반복 요청을 최소화했습니다.
