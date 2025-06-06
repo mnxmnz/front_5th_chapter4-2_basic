@@ -147,3 +147,28 @@ button.setAttribute('aria-label', `Add ${product.title} to shopping bag`);
 ```
 
 동적으로 생성되는 제품 카드에 적절한 ARIA 역할과 레이블을 추가했습니다.
+
+### 2-4. SEO 개선 사항
+
+#### 2-4-1. 메타 태그 추가
+
+```html
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="Discover our premium collection of VR headsets. Shop the latest virtual reality technology from top brands."
+/>
+<meta name="keywords" content="VR headsets, virtual reality, gaming, technology" />
+<meta name="author" content="VR Headsets Shop" />
+<meta name="robots" content="index, follow" />
+<meta property="og:title" content="VR Headsets Shop - Premium Virtual Reality Technology" />
+<meta
+  property="og:description"
+  content="Discover our premium collection of VR headsets. Shop the latest virtual reality technology from top brands."
+/>
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://vrheadsets.shop" />
+```
+
+HTML 파일에 메타 태그를 추가했습니다.
