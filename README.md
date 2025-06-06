@@ -20,22 +20,11 @@ https://front-5th-chapter4-2-basic-nine.vercel.app
 
 ### 2-2. LCP 개선 사항
 
-#### 2-2-1. 이미지 최적화
-
-##### 이미지 포맷 변경
+#### 2-2-1. 이미지 포맷 변경
 
 이미지 포맷을 JPG, PNG 에서 AVIF 로 변경하여 압축률을 개선했습니다.
 
-##### fetchPriority 속성 설정
-
-```js
-const img = document.createElement('img');
-img.fetchPriority = 'low';
-```
-
-제품 이미지의 `fetchPriority` 속성을 `low` 로 설정하여 로딩 우선 순위를 조정했습니다.
-
-##### `picture` 태그 적용
+#### 2-2-2. `picture` 태그 적용
 
 ```html
 <picture>
@@ -54,9 +43,7 @@ img.fetchPriority = 'low';
 
 반응형 이미지 대응을 위해 `picture` 태그를 적용했습니다.
 
-#### 2-2-2. 리소스 로딩 최적화
-
-##### `preload` 속성 적용
+#### 2-2-3. `preload` 속성 적용
 
 ```html
 <link rel="preload" href="https://fonts.googleapis.com/css?family=Heebo:300,400,600,700&display=swap" as="style" />
@@ -65,7 +52,7 @@ img.fetchPriority = 'low';
 
 `preload` 속성을 적용하여 페이지 초기 렌더링 속도를 개선했습니다.
 
-##### 지연 로딩 구현
+#### 2-2-4. 지연 로딩 구현
 
 ```js
 const observer = new IntersectionObserver(
@@ -83,11 +70,9 @@ const observer = new IntersectionObserver(
 );
 ```
 
-IntersectionObserver 를 통한 지연 로딩 구현으로 초기 페이지 로딩 시 필요한 리소스만 먼저 가져왔습니다.
+`IntersectionObserver` 를 통한 지연 로딩 구현으로 초기 페이지 로딩 시 필요한 리소스만 먼저 가져왔습니다.
 
-#### 2-2-3. 데이터 처리 최적화
-
-##### 캐시 적용
+#### 2-2-5. 캐시 적용
 
 ```js
 let cachedProducts = null;
@@ -126,3 +111,39 @@ async function loadProducts() {
 ```
 
 제품 API 호출에 캐시를 적용하여 반복 요청을 최소화했습니다.
+
+### 2-3. Accessibility 개선 사항
+
+#### 2-3-1. ARIA 레이블 적용
+
+```html
+<a href="index.html" aria-label="VR Headsets Shop Home">
+  <button aria-label="Open menu" aria-expanded="false">
+    <form aria-label="Newsletter subscription form"></form></button
+></a>
+```
+
+ARIA 레이블을 추가하여 스크린 리더 사용자들이 각 요소의 목적을 이해할 수 있도록 했습니다.
+
+#### 2-3-2. 이미지 alt 텍스트 개선
+
+```html
+<img
+  src="images/Hero_Desktop.avif"
+  alt="Immersive VR headset experience showcasing virtual reality technology"
+  width="960"
+  height="560"
+  loading="eager"
+/>
+```
+
+모든 이미지에 alt 텍스트를 추가하여 이미지의 내용을 이해할 수 있도록 했습니다.
+
+#### 2-3-3. 제품 카드 접근성 개선
+
+```js
+productElement.setAttribute('role', 'article');
+button.setAttribute('aria-label', `Add ${product.title} to shopping bag`);
+```
+
+동적으로 생성되는 제품 카드에 적절한 ARIA 역할과 레이블을 추가했습니다.
